@@ -21,7 +21,7 @@ for (int r1 = 1; r1 <= R; ++r1) {
                               - prefix[r1 - 1][c2]
                               - prefix[r2][c1 - 1]
                               + prefix[r1 - 1][c1 - 1];
-                // check condition as per question
+                // condition as per question
             }
         }
     }
