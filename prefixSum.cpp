@@ -1,13 +1,13 @@
 // initialise a prefixsum mtrix
-vector<vector<int>> pfs(n+1, vector<int>(m+1, 0));
+vector<vector<int>> prefixSum(n+1, vector<int>(m+1, 0));
 
 // build pfs
 for (int i = 1; i <= n; ++i) {
     for (int j = 1; j <= m; ++j) {
-        prefix[i][j] = matrix[i - 1][j - 1]
-                     + prefix[i - 1][j]
-                     + prefix[i][j - 1]
-                     - prefix[i - 1][j - 1];
+        prefixSum[i][j] = matrix[i - 1][j - 1]
+                     + prefixSum[i - 1][j]
+                     + prefixSum[i][j - 1]
+                     - prefixSum[i - 1][j - 1];
     }
 }
 
@@ -17,10 +17,10 @@ for (int r1 = 1; r1 <= R; ++r1) {
     for (int r2 = r1; r2 <= R; ++r2) {
         for (int c1 = 1; c1 <= C; ++c1) {
             for (int c2 = c1; c2 <= C; ++c2) {
-                long long sum = prefix[r2][c2]
-                              - prefix[r1 - 1][c2]
-                              - prefix[r2][c1 - 1]
-                              + prefix[r1 - 1][c1 - 1];
+                long long sum = prefixSum[r2][c2]
+                              - prefixSum[r1 - 1][c2]
+                              - prefixSum[r2][c1 - 1]
+                              + prefixSum[r1 - 1][c1 - 1];
                 // condition as per question
             }
         }
